@@ -10,13 +10,18 @@ import { Splash } from '../pages/splash/splash';
 import { PopoverPage } from '../pages/popover/popover';
 import { AccountPage } from '../pages/account/account';
 
+import { RegistrationPage } from '../pages/registration/registration';
+
+import { RestApiProvider } from '../providers/rest-api/rest-api';
+
 @NgModule({
   declarations: [
     MyApp,
     HomePage,
     Splash,
     PopoverPage,
-    AccountPage
+    AccountPage,
+    RegistrationPage
   ],
   imports: [
     BrowserModule,
@@ -29,11 +34,13 @@ import { AccountPage } from '../pages/account/account';
     Splash,
     PopoverPage,
     AccountPage,
+    RegistrationPage
   ],
   providers: [
     StatusBar,
     SplashScreen,
-    {provide: ErrorHandler, useClass: IonicErrorHandler}
+    {provide: ErrorHandler, useClass: IonicErrorHandler},
+    RestApiProvider
   ]
 })
 export class AppModule {}

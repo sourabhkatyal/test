@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
-
+import { IonicPage, NavController, NavParams, App } from 'ionic-angular';
+import { RegistrationPage } from '../registration/registration';
 
 /**
  * Generated class for the AccountPage page.
@@ -16,11 +16,15 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 })
 export class AccountPage {
 
-  constructor(public navCtrl: NavController, public navParams: NavParams ) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, public appCtrl: App ) {
   }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad AccountPage');
+  }
+  openregister(){
+    //this.viewCtrl.dismiss();
+    this.appCtrl.getRootNav().push(RegistrationPage);
   }
 
 }
